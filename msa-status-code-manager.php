@@ -79,7 +79,7 @@ add_action('admin_menu', function () {
                         <?php endif; ?>
                         <tr>
                             <td>
-                                <input type="text" name="msa_status_code_manager_rules[new][pattern]" placeholder="example/.*" class="regular-text"/>
+                                <input type="text" name="msa_status_code_manager_rules[new][pattern]" placeholder="example\/.+" class="regular-text"/>
                             </td>
                             <td>
                                 <input type="text" name="msa_status_code_manager_rules[new][target]" placeholder="slug oder https://target.com" class="regular-text"/>
@@ -131,7 +131,6 @@ add_action('admin_notices', function () {
 
     settings_errors('msa_status_code_manager');
 
-    // Optionale eigene Meldung nach erfolgreichem Speichern
     if (isset($_GET['settings-updated']) && $_GET['settings-updated'] == 'true') {
         echo '<div class="updated"><p>Rules saved</p></div>';
     }
